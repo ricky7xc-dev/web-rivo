@@ -1,7 +1,62 @@
+@import 'tailwindcss';
+
+/* ===========================
+   RIVO — Custom Theme
+   =========================== */
+@theme {
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-gray-50: #fafafa;
+  --color-gray-100: #f5f5f5;
+  --color-gray-200: #e5e5e5;
+  --color-gray-300: #d4d4d4;
+  --color-gray-400: #a3a3a3;
+  --color-gray-500: #737373;
+  --color-gray-600: #525252;
+  --color-gray-700: #404040;
+  --color-gray-800: #262626;
+  --color-gray-900: #171717;
+  --color-danger: #e53e3e;
+}
+
+/* ===========================
+   Base Styles
+   =========================== */
 body {
-  margin: 0;
-  font-family: sans-serif;
-  padding: 20px;
-  background-color: #ffffff;
-  color: #000000;
+  font-family: var(--font-geist-sans), system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color: var(--color-gray-900);
+  background-color: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom checkbox style for filters */
+.filter-checkbox {
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid var(--color-gray-300);
+  border-radius: 3px;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  transition: all 150ms ease;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.filter-checkbox:checked {
+  background-color: var(--color-black);
+  border-color: var(--color-black);
+}
+
+.filter-checkbox:checked::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  width: 4px;
+  height: 8px;
+  border: solid var(--color-white);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
 }

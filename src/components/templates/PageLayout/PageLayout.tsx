@@ -8,9 +8,9 @@ interface PageLayoutProps {
 
 export const PageLayout: React.FC<PageLayoutProps> = ({ children }) => {
   return (
-    <div>
+    <div className="min-h-dvh flex flex-col">
       <Header />
-      <main>{children}</main>
+      <main className="flex-1">{children}</main>
       <Footer />
     </div>
   );
